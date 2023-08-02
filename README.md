@@ -40,9 +40,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Taimur Shaikh - [Email](mailto:your.email@example.com) - [LinkedIn](https://www.linkedin.com/in/yourusername/)
+Taimur Shaikh - [Email](tfs2123@columbia.edu) - [LinkedIn](https://www.linkedin.com/in/taimur-shaikh/)
 
-🔗 Project Link: [https://github.com/yourusername/ChatCPT](https://github.com/yourusername/ChatCPT)
+🔗 Project Link: [https://github.com/taimurshaikh/ChatCPT](https://github.com/taimurshaikh/ChatCPT)
 
 ## Sources
 
