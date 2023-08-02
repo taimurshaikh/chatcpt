@@ -14,12 +14,12 @@ async function run(query: string) {
   // }
 
   const model = new ChatOpenAI({
-    openAIApiKey: "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",
+    openAIApiKey: process.env.OPENAI_API_KEY || "",
     temperature: 0.9,
     modelName: "gpt-3.5-turbo",
   });
   const embeddings = new OpenAIEmbeddings({
-    openAIApiKey: "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",
+    openAIApiKey: process.env.OPENAI_API_KEY || "",
   });
 
   const browser = new WebBrowser({ model, embeddings });
