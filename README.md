@@ -1,6 +1,7 @@
 # 💬 ChatCPT
 
 ⚡ Your Personal Work Authorization Assistant ⚡
+
 ChatCPT is a modern web-based chatbot application designed to assist international college students with questions about work authorization in the United States. It leverages the power of Gen AI to provide intelligent responses, all wrapped in a sleek and user-friendly interface.
 
 ## ✨ Features
