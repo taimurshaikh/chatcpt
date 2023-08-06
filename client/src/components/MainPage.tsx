@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import ChatInput from "./ChatInput";
 import ChatOutput from "./ChatOutput";
 import Footer from "./Footer";
+import "axios";
+import axios from "axios";
 
 const MainPage: React.FC = () => {
   const [chatHistory, setChatHistory] = useState<
@@ -10,12 +12,15 @@ const MainPage: React.FC = () => {
 
   // Function to handle user queries and add them to chat history
   const handleUserQuery = async (query: string) => {
-    // You can implement logic here to interact with the OpenAI API and get the chatbot's response
-    // For now, let's simply echo the user query as the chatbot's response
     const userQuery = { text: query, isBot: false };
-    const response = "";
-    const botResponse = { text: response, isBot: true };
-    setChatHistory([...chatHistory, userQuery, botResponse]);
+    try {
+      const response = await axios.post("/api/generate", { query });
+      const message = response.data.message;
+      const botResponse = { text: message, isBot: true };
+      setChatHistory([...chatHistory, userQuery, botResponse]);
+    } catch (error) {
+      //console.log("Error: ", error);
+    }
   };
 
   return (
