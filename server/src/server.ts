@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import run from './utils/webbrowser';
+import run from './utils/agent';
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -17,18 +17,15 @@ app.get('/api', (_req, res) => {
 
 app.post('/api/generate', express.json(), async (req, res, next) => {
   try {
-    console.log(req.body.query);
     const query = req.body.query; // Extract 'query' from request body
-    console.log("here");
+    const uni = req.body.selectedUniversity;
     if (!query) {
       res.status(400).json({ error: 'Missing required parameter: query' });
     }
-    console.log("here2");
-    const responseString = await run(query); // Call the run function with the provided query
-    console.log("here3");
+    const responseString = await run(query + `. For context, I go to ${uni}.`); // Call the run function with the provided query
     res.status(200).json({ message: responseString }); // Send the response string back to the frontend
-  } catch (error) {
-    res.status(500).json({ error: 'An error occurred' });
+  } catch (e) {
+    res.status(500).json({ error: e });
   }
 });
 
