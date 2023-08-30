@@ -12,6 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tanstack/react-query": "^4.33.0",
+    "@trpc/client": "^10.38.1",
+    "@trpc/react-query": "^10.38.1",
+    "@trpc/server": "^10.38.1",
     "axios": "^1.4.0",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",

@@ -6,7 +6,11 @@ import Footer from "./Footer";
 import "axios";
 import axios from "axios";
 
-const MainPage: React.FC = () => {
+interface MainPageProps {
+  trpc: any;
+}
+
+const MainPage: React.FC<MainPageProps> = () => {
   const [chatHistory, setChatHistory] = useState<
     { text: string; isBot: boolean }[]
   >([]);

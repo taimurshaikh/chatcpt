@@ -6,12 +6,13 @@ import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
 
 import dotenv from "dotenv";
+import { run } from "./retrieval_chain";
 dotenv.config();
 
-async function run(query: string) {
+async function run_query(query: string) {
   process.env.LANGCHAIN_HANDLER = "langchain";
   console.log("creating model");
-  
+
   const model = new ChatOpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY || "",
     temperature: 0.9,
@@ -40,9 +41,9 @@ async function run(query: string) {
     verbose: true,
   });
   console.log(query);
-  const response = await executor.call({input: query});
+  const response = await executor.call({ input: query });
   console.log(response);
   return response;
 }
 
-export default run;
+export default run_query;
